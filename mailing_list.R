@@ -58,15 +58,18 @@ dc_mailing <- function(x = "PMH Site Info.xlsx") {
     
     mailing_list_dco <- distinct(all_dco)
     mailing_list_ta <- distinct(all_ta)
-    
+
     mailing_list_dco$all_dco[mailing_list_dco$all_dco == ""] <- NA
     mailing_list_ta$all_ta[mailing_list_ta$all_ta == ""] <- NA
     
     mailing_list_dco <- mailing_list_dco %>% na.omit()
     mailing_list_ta <- mailing_list_ta %>% na.omit()
     
-    colnames(mailing_list_dco) <- "All DCOs"
-    colnames(mailing_list_ta) <- "All TAs"    
+    colnames(mailing_list_dco) <- "All_DCOs"
+    colnames(mailing_list_ta) <- "All_TAs"
+    
+    mailing_list_dco <- mailing_list_dco %>% arrange(All_DCOs)
+    mailing_list_ta <- mailing_list_ta %>% arrange(All_TAs)
     
     ## Write txt for Outlook
     
@@ -141,8 +144,11 @@ dc_mailing <- function(x = "PMH Site Info.xlsx") {
     mailing_list_dco <- mailing_list_dco %>% na.omit()
     mailing_list_ta <- mailing_list_ta %>% na.omit()
     
-    colnames(mailing_list_dco) <- "All DCOs"
-    colnames(mailing_list_ta) <- "All TAs"    
+    colnames(mailing_list_dco) <- "All_DCOs"
+    colnames(mailing_list_ta) <- "All_TAs"
+    
+    mailing_list_dco <- mailing_list_dco %>% arrange(All_DCOs)
+    mailing_list_ta <- mailing_list_ta %>% arrange(All_TAs)
     
     ## Write txt for Outlook
     
