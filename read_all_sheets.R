@@ -1,13 +1,14 @@
 ## A function to return all sheets in xlsx to a list with dataframe elements
 
-library(xlsx)
-
-x <- "PMH Site Info.xlsx"
-input <- paste ("input/", x, sep = "")
+# library(xlsx)
+# 
+# x <- "input/PMH Site Info.xlsx"
 
 read_all_sheets <- function (x){
   
   require(xlsx)
+  
+  input <- x
   
   wb <- loadWorkbook(input)
   sheets <- getSheets(wb)
@@ -17,8 +18,10 @@ read_all_sheets <- function (x){
   
   all_sheets <- lapply(sheet_index, function (x) {read.xlsx2(file = input, sheetIndex = x)})
   
-  names(all_sheets) <- sheets
+  names(all_sheets) <- names(sheets)
+  
+  all_sheets
   
 }
 
-sheets <- read_all_sheets(input)
+# all_sheets <- read_all_sheets(input)
