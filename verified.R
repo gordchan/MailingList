@@ -1,6 +1,6 @@
 verify <- function(x){
 
-  # x = "verified_PMH_ta.txt"
+  # x = "mailing list.txt"
     
   ## Read through email validated by Outlook "To:" field and return whether the email has been validated
   
@@ -21,4 +21,4 @@ verify <- function(x){
   
 }
 
-verify("verified_PMH_ta.txt")
+verify("mailing list.txt")
